@@ -1,0 +1,86 @@
+/* v4 PESTAÑAS 0210-1436-MUSE: esconder por DNI sin hueco (Claudio) */
+[data-ra-hidden] { visibility: hidden !important; pointer-events: none !important; }
+#wbp-tabs-bar {
+  position: fixed; left: 0; top: 0;
+  width: 72px; height: 80vh;
+  background: #111b21; color: #e9edef;
+  border-right: 1px solid #222d34;
+  z-index: 9999;
+  display: flex; flex-direction: column; gap: 4px;
+  padding: 6px 4px; box-sizing: border-box;
+  font-family: Calibri, Segoe UI, Arial, sans-serif;
+  overflow-y: auto; overflow-x: hidden;
+}
+body.wbp-has-bar { margin: 0 !important; }
+body.wbp-min #wbp-tabs-bar { display: none !important; }
+
+.wbp-top { display: flex; gap: 4px; align-items: center; justify-content: center; }
+#wbp-histbtn { background: transparent; border: none; color: #8696a0; font-weight: 800; font-size: 14px; cursor: pointer; padding: 4px 6px; }
+#wbp-histbtn:hover { color: #fff; }
+#wbp-add {
+  background: #6f9e8a; color: #fff; border: none; border-radius: 7px;
+  width: 26px; height: 26px; font-size: 18px; font-weight: 800; cursor: pointer; line-height: 1;
+}
+#wbp-add:hover { background: #7fb69e; }
+
+#wbp-cats, #wbp-loose { display: flex; flex-direction: column; gap: 4px; }
+.wbp-cat {
+  display: flex; align-items: center; justify-content: space-between; gap: 4px;
+  background: #202c33; color: #e9edef; border: 1px solid #2a3942;
+  border-radius: 6px; padding: 4px 5px; cursor: pointer;
+  font-family: Calibri, Arial, sans-serif; font-size: 12px; font-weight: 700;
+  width: 100%; box-sizing: border-box;
+}
+.wbp-cat:hover { background: #2a3942; }
+.wbp-cat.wbp-open { outline: 2px solid #00a884; }
+.wbp-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+.wbp-dot.blink { animation: wbp-blink 1.1s infinite; }
+@keyframes wbp-blink { 0%,100% { opacity: 1; } 50% { opacity: 0.15; } }
+
+.wbp-sublist { display: flex; flex-direction: column; gap: 3px; margin: 2px 0 4px 6px; }
+.wbp-item, .wbp-loose-tab {
+  background: #242B42; color: #e9edef; border: 1px solid #2a3942;
+  border-radius: 6px; padding: 4px 5px; cursor: pointer;
+  font-family: Calibri, Arial, sans-serif; font-size: 12px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100%; box-sizing: border-box;
+}
+.wbp-item { background: #1f2c34; }
+.wbp-item:hover, .wbp-loose-tab:hover { background: #2a3942; }
+.wbp-active { outline: 2px solid #00a884; }
+.wbp-empty { color: #8696a0; font-size: 11px; text-align: center; }
+
+.wbp-bottom { margin-top: auto; display: flex; flex-direction: column; gap: 4px; align-items: center; }
+#wbp-min { background: #202c33; color: #e9edef; border: 1px solid #2a3942; border-radius: 6px; padding: 3px 6px; cursor: pointer; font-size: 11px; width: 100%; }
+#wbp-min:hover { background: #2a3942; }
+#wbp-restore {
+  position: fixed; left: 0; top: 40vh; z-index: 9999;
+  background: #202c33; color: #e9edef; border: 1px solid #2a3942; border-radius: 0 8px 8px 0;
+  padding: 8px 5px; cursor: pointer; display: none;
+}
+body.wbp-min #wbp-restore { display: block; }
+
+/* menú botón derecho */
+.wbp-ctx { position: fixed; z-index: 10005; background: #1f2c34; border: 1px solid #374045; border-radius: 8px; padding: 4px; min-width: 110px; }
+.wbp-ctx button { display: block; width: 100%; background: transparent; border: none; color: #e9edef; padding: 7px 10px; text-align: left; cursor: pointer; font-size: 13px; border-radius: 6px; }
+.wbp-ctx button:hover { background: #2a3942; }
+
+/* editor e historial igual que antes */
+.wbp-editor { position: fixed; inset: 0; background: rgba(0,0,0,.55); display: flex; align-items: center; justify-content: center; z-index: 10002; font-family: Segoe UI, Arial, sans-serif; }
+.wbp-card { background: #fff; border-radius: 12px; padding: 16px; width: 330px; max-width: 92vw; color: #111; }
+.wbp-card h3 { margin: 0 0 4px; }
+.wbp-sub { margin: 0 0 10px; color: #555; font-size: 12px; }
+.wbp-card label { display: block; font-size: 13px; margin: 8px 0; color: #222; }
+.wbp-card input, .wbp-card select { width: 100%; box-sizing: border-box; padding: 8px 10px; margin-top: 4px; border: 1px solid #ccc; border-radius: 8px; }
+.wbp-btns { display: flex; gap: 8px; justify-content: flex-end; margin-top: 12px; }
+.wbp-btns button { padding: 8px 14px; border-radius: 8px; border: 1px solid #ccc; cursor: pointer; }
+#wbp-ok { background: #00a884; color: #fff; border: none; font-weight: 800; }
+.wbp-hist { position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 10003; display: flex; align-items: center; justify-content: center; font-family: Segoe UI, Arial, sans-serif; }
+.wbp-hist-card { background: #1a242b; color: #e9edef; width: 420px; max-width: 94vw; max-height: 84vh; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; }
+.wbp-hist-card input { width: 100%; box-sizing: border-box; padding: 8px 10px; border-radius: 8px; border: 1px solid #374045; background: #0b141a; color: #e9edef; margin-bottom: 8px; }
+.wbp-hist-list { overflow-y: auto; flex: 1; }
+.wbp-day { font-weight: 800; margin: 12px 0 4px; color: #fff; }
+.wbp-hrow { display: flex; align-items: center; gap: 8px; padding: 6px 4px; border-bottom: 1px solid #222d34; font-size: 13px; }
+.wbp-htime { color: #8696a0; width: 38px; }
+.wbp-hname { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.wbp-hfijar { background: #00a884; color: #fff; border: none; border-radius: 7px; padding: 4px 10px; cursor: pointer; }
+.wbp-hmore { margin-top: 10px; background: #202c33; color: #e9edef; border: 1px solid #374045; border-radius: 8px; padding: 8px; cursor: pointer; }

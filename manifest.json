@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "PESTAÑAS 0210-1436-MUSE",
+  "version": "4.0.0",
+  "description": "Tira izquierda por categorias. Esconde sin archivar. Abre por DNI. Solo archiva al cerrar.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://web.whatsapp.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["bridge-main.js"],
+      "world": "MAIN",
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "PESTAÑAS 0210-1436-MUSE"
+  },
+  "minimum_chrome_version": "88"
+}

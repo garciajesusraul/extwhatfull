@@ -1,0 +1,14 @@
+PESTAÑAS 0210-1436-MUSE v4 - como dijo Claudio
+
+1. Recarga en chrome://extensions. F5 en WhatsApp.
+2. Tira negra a la izquierda. Arriba H y +.
+3. Abre chat. Toca +. Pon nombre, grupo y teléfono.
+4. Toca Fijar. No archiva. Solo esconde de la lista.
+5. Esconde por DNI. Sin hueco. Si buscas arriba muestra todo.
+6. Toca grupo para ver sus chats. Toca chat para abrir.
+7. Abre por DNI. Si hay wa-js usa wa-js. Si no usa buscador.
+8. Cambiar con clic derecho Editar o Borrar.
+9. X cierra y ahí sí archiva. Va a H con hora y día.
+10. H busca por nombre o teléfono. Fijar crea nuevo hoy.
+11. Guarda 60 días. Si WhatsApp cambia sale aviso DOM cambió.
+12. Para wa-js full: baja wppconnect-wa.js y avísame y lo sumo.
